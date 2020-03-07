@@ -1,18 +1,10 @@
 #EternalChaos - 06/03/2020
-
-"""
-import temp_mail
-t = temp_mail.TempMail()
-t.actual_email
-t.check_inbox()
-"""
+#Author: Shi0n
 
 import requests
 import json
 import random
 import hashlib
-from time import ctime
-from bs4 import BeautifulSoup as bs
 
 
 ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'
@@ -52,13 +44,7 @@ class TempMail():
         self.actual_email_hash = email_hash
     
     def check_inbox(self) -> "json":
-        """Check if you have a new email
-        
-        Raises:
-            Exception: 
-        """
-        if self.actual_email == None:
-            raise Exception(": You don't have an email yet.")
+        """Check if you have a new email"""
         
         response = requests.get(f"https://api4.temp-mail.org/request/mail/id/{self.actual_email_hash}/format/json", headers={"User-Agent": "okhttp/3.12.6"})
         response = json.loads(response.text)
