@@ -1,1 +1,4 @@
 .vscode/settings.json
+__pycache__/temp_mail.cpython-37.pyc
+__pycache__/temp_mail.cpython-38.pyc
+.gitignore
