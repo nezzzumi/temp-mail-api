@@ -1,4 +1,4 @@
-## How import
+## How to import
 
 ```
 >>> from temp_mail import TempMail
