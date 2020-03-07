@@ -26,6 +26,14 @@ class TempMail():
     def __init__(self):
         self.generate_new_email()
 
+    def set_email(self, email: str):
+        domains = self.get_available_domains()
+        if email[email.index("@"):] in domains:
+            email_hash = hashlib.md5(email.encode("utf-8")).hexdigest()
+            
+            self.actual_email = email
+            self.actual_email_hash = email_hash
+
     def get_available_domains(self) -> list:
         """List all available domains"""
 
