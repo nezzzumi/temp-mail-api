@@ -29,6 +29,8 @@ class TempMail:
             
             self.__actual_email = email
             self.__actual_email_hash = email_hash
+        else:
+            raise Exception(f"TempMail: {email[email.index('@'):]} doesn't exist.")
 
     def get_available_domains(self) -> list:
         """List all available domains"""
