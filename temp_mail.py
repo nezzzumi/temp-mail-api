@@ -93,7 +93,3 @@ class Email:
         """return email's infos in a dict"""
         
         return {"from":self.__from, "subject": self.__subject, "body": self.__body}
-    
-    
-
-            
