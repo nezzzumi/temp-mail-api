@@ -51,7 +51,7 @@ class TempMail():
         self.actual_email = email
         self.actual_email_hash = email_hash
     
-    def check_inbox(self) -> dict:
+    def check_inbox(self) -> "json":
         """Check if you have a new email
         
         Raises:
