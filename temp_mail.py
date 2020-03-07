@@ -23,6 +23,7 @@ class TempMail:
         return self.__actual_email
 
     def set_email(self, email: str):
+        """set a new email"""
         domains = self.get_available_domains()
         if email[email.index("@"):] in domains:
             email_hash = hashlib.md5(email.encode("utf-8")).hexdigest()
@@ -72,15 +73,16 @@ class Email:
         self.__subject = subject
         self.__body = body
 
-    def get_subject(self) -> str:
-        """return email's subject"""
-        
-        return self.__subject
-
     def get_sender(self) -> str:
         """return who sent the email"""
         
         return self.__from
+
+
+    def get_subject(self) -> str:
+        """return email's subject"""
+        
+        return self.__subject
 
     def get_text(self) -> str:
         """return email's body"""
