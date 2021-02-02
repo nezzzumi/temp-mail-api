@@ -48,10 +48,13 @@ dxngoaiileax@sweatmail.com
 >>> email_1 = emails[0] # saving the first email into the variable
 >>> email_1.sender
 '"Sr. Example" <example@example.com>'
+>>>
 >>> email_1.subject
 'This is the subject of the email.'
+>>>
 >>> email_1.body
 'This is the body of the email.'
+>>>
 >>> email_1.all_info()
 {'from': '"Sr. Example" <example@example.com>', 'subject': 'This is the subject of the email.', 'body': 'This is the body of the email.'}
 ```
