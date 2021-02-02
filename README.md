@@ -8,13 +8,13 @@
 ## To get the actual email
 
 ```
->>> t.get_actual_email()
+>>> t.actual_email
 dxngoaiileax@sweatmail.com
 ```
 
 ## To get available domains
 ```
->>> t.get_available_domains()
+>>> t.available_domains
 ['@upcmaill.com', '@hxqmail.com', '@mailernam.com', '@mailezee.com', '@sweatmail.com', '@emailnube.com', '@remailsky.com', '@mrisemail.com', '@newe-mail.com', '@provamail.com']
 ```
 
@@ -27,10 +27,10 @@ dxngoaiileax@sweatmail.com
 ## To generate a new email
 
 ```
->>> t.get_actual_email()
+>>> t.actual_email
 'dxngoaiileax@sweatmail.com' # before gen a new email
->>> t.generate_new_email()
->>> t.get_actual_email()
+>>> t.gen_new_email()
+>>> t.actual_email
 'dotkaacxmfgc@mrisemail.com' # after gen a new email
 ```
 
@@ -46,12 +46,12 @@ dxngoaiileax@sweatmail.com
 
 ```
 >>> email_1 = emails[0] # saving the first email into the variable
->>> email_1.get_sender()
+>>> email_1.sender
 '"Sr. Example" <example@example.com>'
->>> email_1.get_subject()
+>>> email_1.subject
 'This is the subject of the email.'
->>> email_1.get_text()
+>>> email_1.body
 'This is the body of the email.'
->>> email_1.get_all()
+>>> email_1.all_info()
 {'from': '"Sr. Example" <example@example.com>', 'subject': 'This is the subject of the email.', 'body': 'This is the body of the email.'}
 ```
