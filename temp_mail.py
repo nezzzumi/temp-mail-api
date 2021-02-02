@@ -17,8 +17,9 @@ chars = ascii_lowercase + digits
 class TempMail:
     def __init__(self):
         self.generate_new_email()
-
-    def get_actual_email(self) -> str:
+    
+    @property
+    def actual_email(self) -> str:
         """return the actual email address"""
         return self.__actual_email
 
@@ -32,16 +33,17 @@ class TempMail:
             self.__actual_email_hash = email_hash
         else:
             raise Exception(f"TempMail: {email[email.index('@'):]} doesn't exist.")
-
-    def get_available_domains(self) -> list:
+    
+    @property
+    def available_domains(self) -> list:
         """List all available domains"""
 
         response = requests.get("https://api4.temp-mail.org/request/domains/format/json", headers={"User-Agent": "okhttp/3.12.6"})
         domains = json.loads(response.text)
         
         return list(domains)
-
-    def generate_new_email(self):
+    
+    def gen_new_email(self):
         """Generate an new temp-email"""
 
         domains = self.get_available_domains()
@@ -73,23 +75,27 @@ class Email:
         self.__subject = subject
         self.__body = body
 
-    def get_sender(self) -> str:
+
+    @property
+    def sender(self) -> str:
         """return who sent the email"""
         
         return self.__from
 
-
-    def get_subject(self) -> str:
+    @property
+    def subject(self) -> str:
         """return email's subject"""
         
         return self.__subject
 
-    def get_text(self) -> str:
+    @property
+    def body(self) -> str:
         """return email's body"""
         
         return self.__body
 
-    def get_all(self) -> dict:
+    @property
+    def all_info(self) -> dict:
         """return email's infos in a dict"""
         
         return {"from":self.__from, "subject": self.__subject, "body": self.__body}
