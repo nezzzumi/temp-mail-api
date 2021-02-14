@@ -16,7 +16,7 @@ chars = ascii_lowercase + digits
 
 class TempMail:
     def __init__(self):
-        self.generate_new_email()
+        self.gen_new_email()
     
     @property
     def actual_email(self) -> str:
