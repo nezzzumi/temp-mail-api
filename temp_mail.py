@@ -46,7 +46,7 @@ class TempMail:
     def gen_new_email(self):
         """Generate an new temp-email"""
 
-        domains = self.get_available_domains()
+        domains = self.available_domains
         email = "".join([random.choice(ascii_lowercase) for x in range(12)])+random.choice(domains)
         email_hash = hashlib.md5(email.encode("utf-8")).hexdigest()
         self.__actual_email = email
